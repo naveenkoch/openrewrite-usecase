@@ -1,56 +1,39 @@
-// Dependencies declaration Pattern1 - first declare them in root project's build.gradle files by reference variables and refer them in the sub projects
-allprojects {
-
-    version = '1.0.0'
-
-    plugins.withType(JavaPlugin) {
-        sourceCompatibility = "1.8"
-        targetCompatibility = "1.8"
-    }
-
-    configurations {
-        all{
-            resolutionStrategy {
-                force 'org.apache.logging.log4j:log4j-api:2.17.1'
-                force 'org.apache.logging.log4j:log4j-core:2.17.1'
-            }
-            exclude group: 'org.apache.logging.log4j', module: 'log4j-slf4j-impl'
-            exclude group: 'org.apache.logging.log4j', module: 'log4j-1.2-api'
-        }
-    }
-
-
-    ext.libraries = [
-            jeelib				: 'javax:javaee-api:7.0',
-            eclipseLink         : 'com.ibm.ws.jpa.container.eclipselink:com.ibm.ws.jpa.container.eclipselink:2.6.3',
-            thinClient			: 'com.ibm:com.ibm.ws.jpa-2.1.thinclient_9.0:9.0',
-            primefaces          : 'org.primefaces:primefaces:5.3',
-            primefacesTheme     : 'org.primefaces.themes:all-themes:1.0.10',
-            jackson             : 'org.codehaus.jackson:jackson-core-asl:1.9.13',
-            jacksonMapper       : 'org.codehaus.jackson:jackson-mapper-asl:1.9.13',
-            commonsIo           : 'commons-io:commons-io:2.6',
-            commonsFileUpload   : 'commons-fileupload:commons-fileupload:1.5',
-            commonsLang3        : 'org.apache.commons:commons-lang3:3.4',
-            jUnit               : 'junit:junit:4.12',
-            mockitoAll          : 'org.mockito:mockito-all:1.10.19',
-            powerMockApi        : 'org.powermock:powermock-api-mockito:1.6.5',
-            powerMockJunit      : 'org.powermock:powermock-module-junit4:1.6.5',
-            liquiBaseCore		: 'org.liquibase:liquibase-core:3.4.1',
-            dbUnit              : 'org.dbunit:dbunit:2.5.3',
-            jacksonAnnotation   : 'com.fasterxml.jackson.core:jackson-annotations:2.15.2',
-            jacksonCore			: 'com.fasterxml.jackson.core:jackson-core:2.15.2',
-            jacksonDataBind     : 'com.fasterxml.jackson.core:jackson-databind:2.15.2',
-            ojdbc				: 'oracle:ojdbc6:12.1.0.2.0',
-            db2jcc				: 'com.ibm.db2.jcc:db2jcc4:4.24.92',
-            db2license			: 'com.ibm.db2.jcc:db2jcc_license_cisuz:4.24.92',
-            prettyfaces			: 'com.ocpsoft:prettyfaces-jsf2:3.3.3',
-
-            slf4j            : 'org.slf4j:slf4j-api:1.7.21',
-            logbackCore      : 'ch.qos.logback:logback-core:1.2.6',
-            logbackClassic   : 'ch.qos.logback:logback-classic:1.2.6',
-            logstashLogbackenc : 'net.logstash.logback:logstash-logback-encoder:6.6'
-
-
-    ]
+plugins {
+    id 'java'
 }
 
+
+dependencies {
+
+    implementation 'org.json:json:20230227'
+
+
+    implementation(group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21')
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.17.0'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.17.0'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.17.0'
+
+    implementation group: 'commons-collections', name: 'commons-collections', version: '3.2.1'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.3'
+    implementation group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: '1.9.2'
+
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.15.2'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.15.2'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.15.2'
+
+    implementation(group: 'org.freemarker', name: 'freemarker', version: '2.3.19')
+    implementation(group: 'org.xhtmlrenderer', name: 'flying-saucer-pdf-openpdf', version: '9.1.16')
+
+    implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-csv', version: '2.11.1'
+
+    implementation 'org.yaml:snakeyaml:2.0'
+
+    testImplementation(group: 'org.powermock', name: 'powermock-module-junit4', version: '2.0.7')
+    testImplementation(group: 'org.powermock', name: 'powermock-api-mockito2', version: '2.0.7')
+    testImplementation(group: 'org.mockito', name: 'mockito-core', version: '2.28.2', classifier: 'sources')
+
+}
+
+repositories {
+    mavenCentral()
+}
