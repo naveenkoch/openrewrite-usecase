@@ -2,7 +2,6 @@
   
   Openrewrite Upgrade recipe example
 
-  In this project the dependencies are declared in root project's build.gradle file by varialbe and refer them in sub projects.
 
 # How to Run Rewrite Upgrade Recipe
  
@@ -11,8 +10,7 @@
 ```
 gradle --init-script ../init.gradle rewriteRun
 ```
-# Problem
-  After running the recipe the dependencies are not upgrading eventhough the recipe ran without any error.
-  Even if we run change the init.gradle script to allprojects rather than rootProject still it's not working.
- 
+
+ In this branch open rewrite plugin and dependencies are already added in buils.gradle 
+ so gradle rewriteRun will also work.
  
