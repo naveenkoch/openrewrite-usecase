@@ -1,0 +1,41 @@
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.UpgradeDependencyVersionExample
+displayName: Upgrade Gradle or Maven dependency versions example
+recipeList:
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: com.fasterxml.jackson.core*
+      artifactId: jackson-annotations*
+      newVersion: 2.15.3
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: com.fasterxml.jackson.core*
+      artifactId: jackson-core*
+      newVersion: 2.15.3
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: com.fasterxml.jackson.core*
+      artifactId: jackson-databind*
+      newVersion: 2.15.3
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: commons-collections*
+      artifactId: commons-collections*
+      newVersion: 3.2.2
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.apache.logging.log4j*
+      artifactId: log4j-core*
+      newVersion: 2.19.0
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.apache.logging.log4j*
+      artifactId: log4j-slf4j-impl*
+      newVersion: 2.19.0
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.apache.logging.log4j*
+      artifactId: log4j-api*
+      newVersion: 2.19.0
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.codehaus.jackson*
+      artifactId: jackson-mapper-asl*
+      newVersion: 1.9.130
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.yaml*
+      artifactId: snakeyaml*
+      newVersion: 2.2

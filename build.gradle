@@ -1,4 +1,6 @@
+// Dependencies declaration Pattern1 - first declare them in root project's build.gradle files by reference variables and refer them in the sub projects
 allprojects {
+
     version = '1.0.0'
 
     plugins.withType(JavaPlugin) {
@@ -41,9 +43,6 @@ allprojects {
             ojdbc				: 'oracle:ojdbc6:12.1.0.2.0',
             db2jcc				: 'com.ibm.db2.jcc:db2jcc4:4.24.92',
             db2license			: 'com.ibm.db2.jcc:db2jcc_license_cisuz:4.24.92',
-            // log4japi			: 'org.apache.logging.log4j:log4j-1.2-api:2.17.1',
-            //  log4jcore			: 'org.apache.logging.log4j:log4j-core:2.17.1',
-            // slf4jimpl			: 'org.apache.logging.log4j:log4j-slf4j-impl:2.17.1',
             prettyfaces			: 'com.ocpsoft:prettyfaces-jsf2:3.3.3',
 
             slf4j            : 'org.slf4j:slf4j-api:1.7.21',

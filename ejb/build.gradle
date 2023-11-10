@@ -1,4 +1,24 @@
 apply plugin: 'java'
 
 dependencies {
+    compileOnly libraries.jeelib
+    implementation libraries.commonsFileUpload
+    implementation libraries.commonsIo
+    implementation libraries.primefacesTheme
+    implementation libraries.primefaces
+    implementation libraries.jacksonAnnotation
+    implementation libraries.jacksonCore
+    implementation libraries.jacksonDataBind
+    implementation libraries.slf4j
+    implementation libraries.logbackCore
+    implementation libraries.logbackClassic
+    implementation libraries.logstashLogbackenc
+    implementation group:'org.apache.commons',name:'commons-lang',version:'2.6'
+    compileOnly libraries.eclipseLink
+    compileOnly libraries.thinClient
+}
+
+
+configurations {
+    implementation.exclude(group: 'org.slf4j', module: 'slf4j-jdk14')
 }
