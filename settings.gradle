@@ -1,0 +1,5 @@
+rootProject.name = 'openrewrite-usecase'
+include 'web'
+include 'ear'
+include 'ejb'
+
